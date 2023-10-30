@@ -8,8 +8,7 @@ export default function Header() {
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link to="/" className="flex items-center">
-            <img
-              // src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
+            <img             
               src="https://c0.klipartz.com/pngpicture/807/535/gratis-png-cuchillo-de-mesa-y-logotipo-de-tenedor-restaurante-imperio-iconos-de-computadora-comida-rapida-almuerzo-comida-tenedor-cuchillo-almuerzo-icono-de-restaurante.png"
               className="mr-3 h-12"
               alt="Logo"
