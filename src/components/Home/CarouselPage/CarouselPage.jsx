@@ -12,7 +12,7 @@ function CarouselPage() {
         className='d-block w-100'
         src={carouselpage1}
         alt='First slide'
-        style={{width:90}}
+        style={{width:1080, height:720}}
         />
                 
         <Carousel.Caption>
@@ -26,6 +26,7 @@ function CarouselPage() {
         className='d-block w-100'
         src={carouselpage2}
         alt='Second slide'
+        style={{width:1080, height:720}}
         />
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -38,6 +39,7 @@ function CarouselPage() {
         className='d-block w-100'
         src={carouselpage3}
         alt='Third slide'
+        style={{width:1080, height:720}}
         />
         <Carousel.Caption>
           <h3>Third slide label</h3>

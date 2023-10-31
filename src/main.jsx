@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Layout from './Layout.jsx'
 import Home from './components/Home/Home.jsx'
 import About from './components/About/About.jsx'
@@ -10,6 +9,7 @@ import User from './components/User/User.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import Login from './components/Login/Login.jsx'
 import ErrorPage from './components/404Page/ErrorPage'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
