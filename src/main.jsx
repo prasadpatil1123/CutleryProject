@@ -9,16 +9,18 @@ import User from './components/User/User.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import Login from './components/Login/Login.jsx'
 import ErrorPage from './components/404Page/ErrorPage'
+import Register from './components/Register/Register'
+
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Layout />}>
+    <Route path='/' element={<Layout />}>     
       <Route path='' element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
       <Route path='login' element={<Login />} />
-      {/* <Route path='Register' element={<Register />} /> */}
+      <Route path='Register' element={<Register />} />
       <Route path='user/' element={<User />}>
         <Route path=':userid' element={<User />} />
       </Route>

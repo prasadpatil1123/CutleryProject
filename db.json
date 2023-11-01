@@ -1,0 +1,55 @@
+{
+  "user": [
+    {
+      "id": "",
+      "name": "",
+      "password": "",
+      "email": "",
+      "phone": "",
+      "country": "",
+      "address": "",
+      "role": "",
+      "gender": ""
+    },
+    {
+      "id": "Batman",
+      "name": "Bruce wayne",
+      "password": "bat",
+      "email": "bat@mail.com",
+      "phone": "1234",
+      "country": "india",
+      "address": "New york",
+      "gender": "male"
+    },
+    {
+      "id": "Avi",
+      "name": "Avdhut ",
+      "password": "1234",
+      "email": "A@gmail.com",
+      "phone": "45678",
+      "country": "india",
+      "address": "adress",
+      "gender": "male"
+    },
+    {
+      "id": "Yash",
+      "name": "Yash C",
+      "password": "123",
+      "email": "a@mail.com",
+      "phone": "123",
+      "country": "india",
+      "address": "ad",
+      "gender": "male"
+    },
+    {
+      "id": "Namit",
+      "name": "Namit Sir",
+      "password": "123",
+      "email": "n@mail.com",
+      "phone": "12",
+      "country": "india",
+      "address": "",
+      "gender": "male"
+    }
+  ]
+}
