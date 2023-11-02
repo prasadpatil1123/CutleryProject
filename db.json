@@ -50,6 +50,36 @@
       "country": "india",
       "address": "",
       "gender": "male"
+    },
+    {
+      "id": "Rushi ",
+      "name": "Rushikesh Gat ",
+      "password": "123",
+      "email": "gat@mail.com",
+      "phone": "123345",
+      "country": "india",
+      "address": "Pune",
+      "gender": "male"
+    },
+    {
+      "id": "rushi",
+      "name": "rushi gat",
+      "password": "qwer",
+      "email": "gat@mail.com",
+      "phone": "123456",
+      "country": "india",
+      "address": "qwert",
+      "gender": "male"
+    },
+    {
+      "id": "Kashi",
+      "name": "Prasad",
+      "password": "123",
+      "email": "k@mail.com",
+      "phone": "1234",
+      "country": "india",
+      "address": "adress",
+      "gender": "male"
     }
   ]
 }

@@ -7,8 +7,8 @@ import HeroSection from '../Header/HeroSection';
 function Home() {
   return (
     <div className="mx-auto w-full max-w-7xl">
-      <HeroSection />
       <Carouselpage />
+      <HeroSection />
       <PromoSections />
     </div>
   )

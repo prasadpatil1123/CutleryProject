@@ -9,9 +9,9 @@ const Register = () => {
   const [password, passwordchange] = useState("");
   const [email, emailchange] = useState("");
   const [phone, phonechange] = useState("");
-  const [country, countrychange] = useState("india");
+  // const [country, countrychange] = useState("india");
   const [address, addresschange] = useState("");
-  const [gender, genderchange] = useState("");
+  // const [gender, genderchange] = useState("");
 
   const navigate = useNavigate();
 
@@ -48,7 +48,7 @@ const Register = () => {
   }
   const handlesubmit = (e) => {
     e.preventDefault();
-    let regobj = { id, name, password, email, phone, country, address, gender };
+    let regobj = { id, name, password, email, phone, address, };
     if (IsValidate()) {
       // console.log(regobj);
       fetch("http://localhost:8000/user", {
@@ -134,7 +134,7 @@ const Register = () => {
                   </div>
                 </div>
 
-                <div className='col-lg-6'>
+                {/* <div className='col-lg-6'>
                   <div className='form-group'>
                     <label>Country <span className='errmsg'>*</span></label>
                     <select
@@ -147,7 +147,7 @@ const Register = () => {
                       <option value="singapore">Singapore</option>
                     </select>
                   </div>
-                </div>
+                </div> */}
 
                 <div className='col-lg-6'>
                   <div className='form-group'>
@@ -160,7 +160,7 @@ const Register = () => {
                   </div>
                 </div>
 
-                <div className='col-lg-6'>
+                {/* <div className='col-lg-6'>
                   <div className='form-group'>
                     <label>Gender</label>
                     <br></br>
@@ -184,7 +184,7 @@ const Register = () => {
                       className='app-control'></input>
                     <label>Female </label>
                   </div>
-                </div>
+                </div> */}
 
               </div>
 

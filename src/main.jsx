@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact.jsx'
 import Login from './components/Login/Login.jsx'
 import ErrorPage from './components/404Page/ErrorPage'
 import Register from './components/Register/Register'
+import ForgotPassword from './components/ForgotPassword/ForgotPassword'
 
 
 
@@ -20,7 +21,8 @@ const router = createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
       <Route path='login' element={<Login />} />
-      <Route path='Register' element={<Register />} />
+      <Route path='register' element={<Register />} />
+      <Route path='forgotpassword' element={<ForgotPassword />} />
       <Route path='user/' element={<User />}>
         <Route path=':userid' element={<User />} />
       </Route>

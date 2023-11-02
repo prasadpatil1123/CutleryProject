@@ -10,7 +10,7 @@ export default function Header() {
   const loginStyles = "text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-orange-300";
   // const loginStyles = "text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300";
   const SearchbaarStyles = "text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300";
-  const registerStyles = "text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-orange-300";
+  // const registerStyles = "text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-orange-300";
 
   const navigationLinks = [
     { to: "/", text: "Home" },
@@ -34,9 +34,9 @@ export default function Header() {
             <Link to="/Login" className={`${buttonStyles} ${loginStyles}`}>
               Log in
             </Link>
-            <Link to="/Register" className={`${buttonStyles} ${registerStyles}`}>
+            {/* <Link to="/Register" className={`${buttonStyles} ${registerStyles}`}>
               Registration
-            </Link>
+            </Link> */}
             <Link to="/SearchBar" className={`${buttonStyles} ${SearchbaarStyles}`}>
               <SearchBar />
             </Link>

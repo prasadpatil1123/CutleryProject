@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -11,6 +12,10 @@ const navigation = [
 
 export default function HeroSection() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const registerStyles = "text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-orange-300";
+  const buttonStyles = "font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none";
+
 
   return (
     <div className="bg-white">
@@ -128,12 +133,15 @@ export default function HeroSection() {
             Find the perfect cutlery for any occasion, from everyday meals to special occasions. We offer a wide selection of cutlery sets, individual pieces, and accessories to suit your every need. Shop our cutlery online today!
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
+              {/* <a
                 href="#"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
-              </a>
+              </a> */}
+              <Link to="/Register" className={`${buttonStyles} ${registerStyles}`}>
+              Registration
+            </Link>
               <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
               </a>

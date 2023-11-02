@@ -1,8 +1,8 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
-import carouselpage1 from '../../../assets/CarouselPageImage/carouselpage1.jpg';
-import carouselpage2 from '../../../assets/CarouselPageImage/carouselpage2.jpg';
-import carouselpage3 from '../../../assets/CarouselPageImage/carouselpage3.jpg';
+// import carouselpage1 from '../../../assets/CarouselPageImage/carouselpage1.jpg';
+// import carouselpage2 from '../../../assets/CarouselPageImage/carouselpage2.jpg';
+// import carouselpage3 from '../../../assets/CarouselPageImage/carouselpage3.jpg';
 function CarouselPage() {
   return (
     <div>
