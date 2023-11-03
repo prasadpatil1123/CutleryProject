@@ -80,6 +80,14 @@
       "country": "india",
       "address": "adress",
       "gender": "male"
+    },
+    {
+      "id": "Rony",
+      "name": "Rohan F",
+      "password": "r123",
+      "email": "r@mail.com",
+      "phone": "12346",
+      "address": "chikhali"
     }
   ]
 }

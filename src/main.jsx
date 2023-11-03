@@ -12,8 +12,6 @@ import ErrorPage from './components/404Page/ErrorPage'
 import Register from './components/Register/Register'
 import ForgotPassword from './components/ForgotPassword/ForgotPassword'
 
-
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>     
