@@ -1,205 +1,189 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import {
+  MDBInput,
+  MDBCol,
+  MDBRow,
+  MDBBtn,
+  MDBIcon
+} from 'mdb-react-ui-kit';
+import { BackendBaseURL } from '../../BackendBaseURL';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// import { useNavigate } from 'react-router-dom';
+
+
+//Flow to write a code of Register: =>
+// 1.create component: Register.js
+// 2. add registration form in return()
+// 3. add useState hook: for each input for initalize and update the values of users;
+// 4. create a function to save the user <datalist>
+// 5. when user update/change any value for that add onChange event in form
+// 6. add onClick{onSubmit} to sign up button to save the data
+// 5. do routing in app.js
+// 6. add call its url wherever required
 
 
 const Register = () => {
-  const [id, idchange] = useState("");
-  const [name, namechange] = useState("");
-  const [password, passwordchange] = useState("");
-  const [email, emailchange] = useState("");
-  const [phone, phonechange] = useState("");
-  // const [country, countrychange] = useState("india");
-  const [address, addresschange] = useState("");
-  // const [gender, genderchange] = useState("");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate;
 
-  const IsValidate = () => {
-    let isproceed = true;
-    let errormessage = 'Please enter the value in';
-    if (id === null || id === '') {
-      isproceed = false;
-      errormessage += ' Username';
-    }
-    if (name === null || name === '') {
-      isproceed = false;
-      errormessage += ' Fullname';
-    }
-    if (password === null || password === '') {
-      isproceed = false;
-      errormessage += ' Password';
-    }
-    if (email === null || email === '') {
-      isproceed = false;
-      errormessage += ' Email';
-    }
-    if (!isproceed) {
-      toast.warning(errormessage)
-    } else {
-      if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
-        // Validation passed
-      } else {
-        isproceed = false;
-        toast.warning('Please enter the valid email');
-      }
-    }
-    return isproceed;
-  }
-  const handlesubmit = (e) => {
-    e.preventDefault();
-    let regobj = { id, name, password, email, phone, address, };
-    if (IsValidate()) {
-      // console.log(regobj);
-      fetch("http://localhost:8000/user", {
-        method: "POST",
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(regobj)
-      }).then((res) => {
-        toast.success('Registered successfully.')
-        navigate('/login');
-      }).catch((err) => {
-        toast.error('Failed : ' + err.message);
+  // const hostName = "http://localhost:8080/cutlery";
+
+  //useState: To set the the current state and update the value using set
+  const [id, setId] = useState('');
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [userRole, setUserRole] = useState("");
+
+
+  //save function: once the data has been filled by user need to submit
+  const save = async (event) => {
+    event.preventDefault(); //to avoid default url pattern
+    try {
+      // const result = await axios.get("http://localhost:8080/cutlery/register")
+
+      await axios.post(`${BackendBaseURL}/register`, {
+        //assign frontend user data to backend with backend variables
+        first_name: firstname,
+        last_name: lastname,
+        email: email,
+        password: password,
+        mobile_no: mobile,
+        userRole: ("CUSTOMER", "ADMIN","SELLER")
+
       });
+      alert("Registration Successfully Done!!") //
+
+      //set(change value) => if any value will change then it will be set through set() method
+      setId("");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
+      setMobile("");
+      setUserRole("");
     }
+    catch (err) {
+      console.log("Error: " + err);
+      alert("Registration Failed");
+      toast.err("bad input");
+    }
+
   }
+
 
   return (
-    <div>
-      <div className='offset-lg-3 col-lg-6'>
-        <form
-          className='container'
-          onSubmit={handlesubmit}
-        >
-          <div className='card mt-10'>
-            <div className='card-header'>
-              <h1>User Registration</h1>
+
+    <div className="container shadow bordered" style={{ marginBottom: "35px", marginTop: "35px", width: "600px", borderRadius: "10px" }}>
+      <br />
+      <h2 style={{ "margin": "10px", textAlign: 'center' }}>Registration</h2>
+      <br />
+      <form>
+        <MDBRow className='mb-4'>
+          <MDBCol>
+            <MDBInput id='form3Example1' name='firstname' placeholder='First Name' value={firstname}
+
+              onChange={(event) => {
+                setFirstName(event.target.value);
+              }}
+            />
+          </MDBCol>
+
+          <MDBCol>
+            <MDBInput id='form3Example2' name='Last Name' placeholder='Last Name' value={lastname}
+              onChange={(event) => {
+                setLastName(event.target.value);
+              }}
+            />
+          </MDBCol>
+
+        </MDBRow>
+
+        <MDBInput className='mb-4' type='email' id='form3Example3' name='email' placeholder='Email Address' value={email}
+          onChange={(event) => {
+            setEmail(event.target.value);
+          }}
+        />
+
+        <MDBInput className='mb-4' type='password' id='form3Example4' name='password' placeholder='Password' value={password}
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+        />
+
+        <MDBInput className='mb-4' type='number' id='form3Example5' name='mobile' placeholder='mobile number' pattern="[0-9]]" title="Please enter a valid number"
+          onChange={(event) => {
+            setMobile(event.target.value);
+          }}
+        />
+
+        <div style={{ margin: "10px" }}>
+          <div class="dropdown">
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+              <label class="form-check-label" for="flexRadioDefault1">
+                CUSTOMER
+              </label>
             </div>
-            <div className='card-body'>
-              <div className='row'>
-
-                <div className='col-lg-6'>
-                  <div className='form-group'>
-                    <label>User Name <span className='errmsg'>*</span></label>
-                    <input
-                      value={id}
-                      onChange={e =>
-                        idchange(e.target.value)}
-                      className='form-control'></input>
-                  </div>
-                </div>
-
-                <div className='col-lg-6'>
-                  <div className='form-group'>
-                    <label>Password <span className='errmsg'>*</span></label>
-                    <input
-                      value={password}
-                      onChange={e =>
-                        passwordchange(e.target.value)}
-                      type='password'
-                      className='form-control'></input>
-                  </div>
-                </div>
-
-                <div className='col-lg-6'>
-                  <div className='form-group'>
-                    <label>Full Name <span className='errmsg'>*</span></label>
-                    <input
-                      value={name}
-                      onChange={e =>
-                        namechange(e.target.value)}
-                      className='form-control'></input>
-                  </div>
-                </div>
-
-                <div className='col-lg-6'>
-                  <div className='form-group'>
-                    <label>Email <span className='errmsg'>*</span></label>
-                    <input
-                      value={email}
-                      onChange={e =>
-                        emailchange(e.target.value)}
-                      className='form-control'></input>
-                  </div>
-                </div>
-
-                <div className='col-lg-6'>
-                  <div className='form-group'>
-                    <label>Phone <span className='errmsg'></span></label>
-                    <input
-                      value={phone}
-                      onChange={e =>
-                        phonechange(e.target.value)}
-                      className='form-control'></input>
-                  </div>
-                </div>
-
-                {/* <div className='col-lg-6'>
-                  <div className='form-group'>
-                    <label>Country <span className='errmsg'>*</span></label>
-                    <select
-                      value={country}
-                      onChange={e =>
-                        countrychange(e.target.value)}
-                      className='form-control'>
-                      <option value="india">India</option>
-                      <option value="usa">USA</option>
-                      <option value="singapore">Singapore</option>
-                    </select>
-                  </div>
-                </div> */}
-
-                <div className='col-lg-6'>
-                  <div className='form-group'>
-                    <label>Address </label>
-                    <input
-                      value={address}
-                      onChange={e =>
-                        addresschange(e.target.value)}
-                      className='form-control'></input>
-                  </div>
-                </div>
-
-                {/* <div className='col-lg-6'>
-                  <div className='form-group'>
-                    <label>Gender</label>
-                    <br></br>
-                    <input
-                      type='radio'
-                      checked={gender === 'male'}
-                      onChange={e =>
-                        genderchange(e.target.value)}
-                      name='gender'
-                      value='male'
-                      className='app-control'></input>
-                    <label>Male {" "}</label>
-                    <span>{" "}</span>
-                    <input
-                      type='radio'
-                      checked={gender === 'female'}
-                      onChange={e =>
-                        genderchange(e.target.value)}
-                      name='gender'
-                      value='female'
-                      className='app-control'></input>
-                    <label>Female </label>
-                  </div>
-                </div> */}
-
-              </div>
-
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+              <label class="form-check-label" for="flexRadioDefault2">
+                ADMIN
+              </label>
             </div>
-            <div className="card-footer">
-              <button type="submit" className="btn btn-primary">Register </button> 
-              <span> </span>
-              <Link to={'/login'} className="btn btn-danger">Close</Link>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+              <label class="form-check-label" for="flexRadioDefault2">
+                SELLER
+              </label>
             </div>
 
           </div>
-        </form>
-      </div>
+        </div>
+
+
+        <button type='submit' className="white-text" style={{ width: "570px", height: "37.8px", border: 'none', borderRadius: "5px", backgroundColor: '#0275D8' }} onClick={save} >Sign Up</button>
+        <div className='text-center'>
+          <p>
+            Already a member? <Link to='/login'>Login</Link>
+          </p>
+          <p>or sign up with:</p>,
+          
+
+          <MDBBtn floating color="secondary" className='mx-1'>
+            <MDBIcon fab icon='facebook-f' />
+          </MDBBtn>
+
+          <MDBBtn floating color="secondary" className='mx-1'>
+            <MDBIcon fab icon='google' />
+          </MDBBtn>
+
+          <MDBBtn floating color="secondary" className='mx-1'>
+            <MDBIcon fab icon='twitter' />
+          </MDBBtn>
+
+          <MDBBtn floating color="secondary" className='mx-1'>
+            <MDBIcon fab icon='github' />
+          </MDBBtn>
+
+        </div>
+        <br />
+      </form>
+      <br />
     </div>
+
+    // </div>
+
   );
 }
 
-export default Register;
+export default Register
+

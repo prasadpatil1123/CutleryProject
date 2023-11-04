@@ -1,93 +1,116 @@
 {
-  "user": [
+  "fields": [
     {
       "id": "",
-      "name": "",
-      "password": "",
+      "firstname": "",
+      "lastname": "",
       "email": "",
-      "phone": "",
-      "country": "",
-      "address": "",
-      "role": "",
-      "gender": ""
+      "password": "",
+      "mobile": "",
+      "userRole": [
+        "ADMIN",
+        "SELLER",
+        "CUSTOMER"
+      ]
     },
     {
-      "id": "Batman",
-      "name": "Bruce wayne",
-      "password": "bat",
-      "email": "bat@mail.com",
-      "phone": "1234",
-      "country": "india",
-      "address": "New york",
-      "gender": "male"
+      "first_name": "aa",
+      "last_name": "bb",
+      "email": "aa@mail.com",
+      "password": "12345",
+      "mobile_no": "1234567890",
+      "userRole": "CUSTOMER",
+      "id": "ct3hR0_"
     },
     {
-      "id": "Avi",
-      "name": "Avdhut ",
-      "password": "1234",
-      "email": "A@gmail.com",
-      "phone": "45678",
-      "country": "india",
-      "address": "adress",
-      "gender": "male"
+      "first_name": "xx",
+      "last_name": "yy",
+      "email": "xx@mail.com",
+      "password": "xx123",
+      "mobile_no": "1111111111",
+      "userRole": "CUSTOMER",
+      "id": "KfFoMGV"
     },
     {
-      "id": "Yash",
-      "name": "Yash C",
-      "password": "123",
-      "email": "a@mail.com",
-      "phone": "123",
-      "country": "india",
-      "address": "ad",
-      "gender": "male"
+      "first_name": "op",
+      "last_name": "qr",
+      "email": "op@mail.com",
+      "password": "op123",
+      "mobile_no": "1111122222",
+      "userRole": "CUSTOMER",
+      "id": "hF8RUR3"
     },
     {
-      "id": "Namit",
-      "name": "Namit Sir",
-      "password": "123",
-      "email": "n@mail.com",
-      "phone": "12",
-      "country": "india",
-      "address": "",
-      "gender": "male"
-    },
-    {
-      "id": "Rushi ",
-      "name": "Rushikesh Gat ",
-      "password": "123",
-      "email": "gat@mail.com",
-      "phone": "123345",
-      "country": "india",
-      "address": "Pune",
-      "gender": "male"
-    },
-    {
-      "id": "rushi",
-      "name": "rushi gat",
-      "password": "qwer",
-      "email": "gat@mail.com",
-      "phone": "123456",
-      "country": "india",
-      "address": "qwert",
-      "gender": "male"
-    },
-    {
-      "id": "Kashi",
-      "name": "Prasad",
-      "password": "123",
+      "first_name": "mn",
+      "last_name": "kl",
       "email": "k@mail.com",
-      "phone": "1234",
-      "country": "india",
-      "address": "adress",
-      "gender": "male"
+      "password": "4567",
+      "mobile_no": "3333355555",
+      "userRole": "CUSTOMER",
+      "id": "SKxFSM4"
     },
     {
-      "id": "Rony",
-      "name": "Rohan F",
-      "password": "r123",
+      "first_name": "ganesh",
+      "last_name": "Dev",
+      "email": "g@mail.com",
+      "password": "g123",
+      "mobile_no": "1112223330",
+      "userRole": "CUSTOMER",
+      "id": "7x0gArb"
+    },
+    {
+      "first_name": "Parvati",
+      "last_name": "Shankar",
+      "email": "p@mail.com",
+      "password": "p1234",
+      "mobile_no": "1112223331",
+      "userRole": "CUSTOMER",
+      "id": "gV5wCMJ"
+    },
+    {
+      "first_name": "Mahadev",
+      "last_name": "dev",
+      "email": "m@mail.com",
+      "password": "m123",
+      "mobile_no": "1112223332",
+      "userRole": "CUSTOMER",
+      "id": "eTSmrmM"
+    },
+    {
+      "first_name": "Ram",
+      "last_name": "Dev",
       "email": "r@mail.com",
-      "phone": "12346",
-      "address": "chikhali"
+      "password": "r123",
+      "mobile_no": "1122",
+      "userRole": "CUSTOMER",
+      "id": "t4gkO9C"
+    },
+    {
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "password": "",
+      "mobile_no": "",
+      "userRole": "CUSTOMER",
+      "id": "vbEYf3R"
+    },
+    {
+      "first_name": "hanuman",
+      "last_name": "ram",
+      "email": "h@mail.com",
+      "password": "1234",
+      "mobile_no": "1133",
+      "userRole": "SELLER",
+      "id": "wYRyaOl"
+    },
+    {
+      "first_name": "ravan",
+      "last_name": "Lanka",
+      "email": "r@lanka.com",
+      "password": "123",
+      "mobile_no": "1144",
+      "userRole": "ADMIN",
+      "id": "BNFYKzZ"
     }
   ]
 }

@@ -10,8 +10,8 @@ import { ToastContainer } from 'react-toastify'
 function Layout() {
   return (
     <>
-     <ToastContainer></ToastContainer>
-    <Header/>
+     <ToastContainer />
+    <Header/>   
     <Outlet />
     <Footer />
     </>

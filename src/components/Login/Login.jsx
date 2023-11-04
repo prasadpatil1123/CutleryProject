@@ -1,96 +1,222 @@
-// Import necessary dependencies
+import React, { useState } from 'react';
+import {
+    MDBInput,
+    MDBRow,
+    MDBBtn,
+    MDBIcon
+} from 'mdb-react-ui-kit';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-import React, { useState,useEffect } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { BackendBaseURL } from '../../BackendBaseURL';
+import { Link } from 'react-router-dom';
 
-// Create the Login component
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
+
 const Login = () => {
-  // State to hold user credentials
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
-  const usenavigate = useNavigate();
+    // var [userName, setuserName] = useState("");
+    var [user, setUser] = useState({ email: "", password: "" });
+    var [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
- useEffect(() => {
-  sessionStorage.clear();
- },[]);
 
- const ProceedLogin =(e) =>{
-  e.preventDefault();
-  if(validate()){
-    fetch("http://localhost:8000/user/"+username)
-    .then((res)=>{
-      return res.json();
-    })
-    .then((resp)=>{
-      if(Object.keys(resp).length===0){
-        toast.error('Please Enter valid username');
-      }else{
-        if(resp.password == password){
-            toast.success('Success');
-            sessionStorage.setItem('username',username);
-            sessionStorage.setItem('userrole',resp.role);
-            usenavigate('/')
-        }else{
-          toast.error('Please Enter valid credentials');
-        }
-      }
-    }).catch((err)=> {
-      toast.error('Login Failed due to :'+err.message);
-    });
-  }
- }
+    var handleChange = (args) => {
+        var changedUser = { ...user };
+        changedUser[args.target.name] = args.target.value;
+        setUser(changedUser);
+    }
 
- const ProceedLoginusingAPI = (e) => {
-  e.preventDefault();
-  if(validate()) {
-    let inputobj = {"username":username,"password":password};
-    fetch("")
-  }
- }
+    // var Register = () => {
+    //     navigate.push("/register");
+    // }
 
- const validate = () => {
-  let result = true;
-  if(username === '' || username === null){
-    result = false;
-    toast.warning('Please Enter Username');
-  }
-  if(password === '' || password === null){
-    result = false;
-    toast.warning('Please Enter Password');
-  }
-  return result;
- }
 
-  return (
-    <div class="flex flex-col items-center justify-center mt-10">
-  <h2 class="text-3xl font-semibold mb-10">Login</h2>
-  <form onSubmit={ProceedLogin} class="w-full max-w-sm">
-    <label class="block text-gray-700 font-medium mb-2">User Name: <span className='errmsg'>*</span></label>
-    <input
-      type="text"
-      value={username}
-      onChange={(e) => setUsername(e.target.value)}
-      class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-    />
-    <label class="block text-gray-700 font-medium mb-2">Password: <span className='errmsg'>*</span></label>
-    <input
-      type="password"
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-    />
-    <button type="submit" 
-    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5 mb-10">Login</button>
-    {" "}
-    <Link className="btn btn-success" to={'/register'}>Register</Link>
-    {" "}
-    <Link className="btn btn-danger" to={'/forgotpassword'}>Forgot Password</Link>
-  </form>
+        const notify = () => toast("Wow so easy!");
 
-</div>
-  );
-};
+    var signIn = async () => {
+        console.log("Inside Login")
+        await axios.get(`${BackendBaseURL}/login`,{
+            params: {
+              email: user.email,
+              password: user.password
+            }
+          }).then((res) => {
 
-export default Login;
+            // debugger; //to debug the code here
+
+            console.log(res.data);
+            if (res.data.userRole === "CUSTOMER") {
+
+                setMessage("");
+
+                sessionStorage.setItem("isLoggedIn", "True");
+                console.log(res.data)
+
+                sessionStorage.setItem("userId", res.data.id);
+                console.log(res.data.id);
+
+                sessionStorage.setItem("userName", res.data.first_name);
+                console.log(res.data.first_name);
+
+                sessionStorage.setItem("userRole", res.data.userRole);
+                console.log(res.data.userRole);
+
+                const objectString = JSON.stringify(res.data);
+
+                sessionStorage.setItem("user", objectString);
+
+                console.log(res.data.userRole);
+
+                setMessage("Login Succesfull!");
+                toast.success('Login Successful!');
+                navigate("/customerhome");
+                // alert("Login Successfull!!");
+
+
+            }
+            else if (res.data.userRole === "ADMIN") {
+
+                setMessage("")
+
+                sessionStorage.setItem("isLoggedIn", "True");
+                console.log(res.data)
+
+                sessionStorage.setItem("userName", res.data.first_name);
+                console.log(res.data.first_name)
+
+                sessionStorage.setItem("userId", res.data.id);
+                console.log(res.data.id)
+
+                sessionStorage.setItem("userRole", res.data.userRole);
+                console.log(res.data.userRole)
+
+                const objectString = JSON.stringify(res.data);
+
+                sessionStorage.setItem("user", objectString);
+
+                console.log(res.data.userRole);
+
+                // setMessage("Login successfull!");
+                navigate("/adminhome");
+                toast.success("Login Successful!");
+                // alert("Login Successfull!!");
+                
+            }
+            else if (res.data.userRole === "SELLER") {
+
+              setMessage("")
+
+              sessionStorage.setItem("isLoggedIn", "True");
+              console.log(res.data)
+
+              sessionStorage.setItem("userName", res.data.first_name);
+              console.log(res.data.first_name)
+
+              sessionStorage.setItem("userId", res.data.id);
+              console.log(res.data.id)
+
+              sessionStorage.setItem("userRole", res.data.userRole);
+              console.log(res.data.userRole)
+
+              const objectString = JSON.stringify(res.data);
+
+              sessionStorage.setItem("user", objectString);
+
+              console.log(res.data.userRole);
+
+              // setMessage("Login successfull!");
+              navigate("/sellerhome");
+              toast.success("Login Successful!");
+              // alert("Login Successfull!!");
+              
+          } else {
+                // alert("Login failed, Plz enter valid Credentials.");
+                setUser({ email: "", password: "" });
+                setMessage("Something went wrong");
+            }
+            // toast.success("Login Successful!");
+
+        }).catch((e)=>{
+            console.log(e);
+            toast.error('Bad Credentials!');
+        })
+ 
+
+    }
+
+
+    // var Logout = () => {
+    //     sessionStorage.removeItem("isLoggedIn");
+    //     sessionStorage.removeItem("userName");
+    //     sessionStorage.removeItem("userId");
+    //     sessionStorage.removeItem("userRole");
+    //     navigate.push("/");
+    // }
+
+
+
+    return (
+        <div className="container shadow bordered" style={{ marginBottom: "35px", marginTop: "35px", width: "500px", borderRadius: "10px" }}>
+            {/* <ToastContainer /> */}
+            <br />
+            <h2 style={{ "margin": "10px", textAlign: 'center' }}>Login</h2>
+            {/* <ToastContainer /> */}
+            {/* <br /> */}
+            <form>
+                <MDBRow className='mb-4'>
+
+                </MDBRow>
+                <MDBInput className='mb-4' type='email' id='form3Example3' name='email' placeholder='Email Address' value={user.email}
+                    onChange={handleChange}
+                />
+
+                <MDBInput className='mb-4' type='password' id='form3Example4' name='password' placeholder='Password' value={user.password}
+                    onChange={handleChange}
+                />
+            </form>
+
+                <button type='submit' className="white-text" style={{ width: "470px", height: "37.8px", border: 'none', borderRadius: "5px", backgroundColor: '#0275D8' }} onClick={signIn}>SignIn</button>
+                
+                <ToastContainer />
+
+                {/* <button type='submit' className="white-text" style={{ width: "470px", height: "37.8px", border: 'none', borderRadius: "5px", backgroundColor: '#0275D8' }} onClick={() => { signIn(); notify(); }}>SignIn</button> */}
+              
+                <div className='text-center'>
+                   <p>
+                        Forgot password ? <Link to='/forgotpassword'>Click here! </Link>
+                    </p>
+                    <p>
+                        Not a member? <Link to='/register'>Register</Link>
+                    </p>
+                    <p>or sign up with:</p>,
+
+                    <MDBBtn floating color="secondary" className='mx-1'>
+                        <MDBIcon fab icon='facebook-f' />
+                    </MDBBtn>
+
+                    <MDBBtn floating color="secondary" className='mx-1'>
+                        <MDBIcon fab icon='google' />
+                    </MDBBtn>
+
+                    <MDBBtn floating color="secondary" className='mx-1'>
+                        <MDBIcon fab icon='twitter' />
+                    </MDBBtn>
+
+                    <MDBBtn floating color="secondary" className='mx-1'>
+                        <MDBIcon fab icon='github' />
+                    </MDBBtn>
+
+                </div>
+                <br />
+                
+            <div>
+                {message}
+            </div>
+            <br />
+        </div>
+    );
+}
+
+export default Login
