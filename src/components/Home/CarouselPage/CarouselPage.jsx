@@ -3,6 +3,12 @@ import Carousel from 'react-bootstrap/Carousel';
 // import carouselpage1 from '../../../assets/CarouselPageImage/carouselpage1.jpg';
 // import carouselpage2 from '../../../assets/CarouselPageImage/carouselpage2.jpg';
 // import carouselpage3 from '../../../assets/CarouselPageImage/carouselpage3.jpg';
+
+let imgs = [
+  'https://plus.unsplash.com/premium_photo-1666739032173-d6c21744824b?auto=format&fit=crop&q=80&w=2136&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://images.unsplash.com/photo-1676976500593-3dfec0b17754?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://images.unsplash.com/photo-1556910096-6f5e72db6803?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+];
 function CarouselPage() {
   return (
     <div>
@@ -11,7 +17,7 @@ function CarouselPage() {
         <img 
         className='d-block w-100'
         // src={carouselpage1}
-        src="https://media.istockphoto.com/id/1465927187/photo/knife-fork-and-spoon.jpg?s=612x612&w=0&k=20&c=v4eWtO5wPUjLh-MQCbfcCPJSr9tFM_DhPx0OqnkHAkE="
+        src={imgs[0]}
         alt='First slide'
         style={{width:1080, height:720}}
         />
@@ -26,7 +32,7 @@ function CarouselPage() {
       <img 
         className='d-block w-100'
         // src={carouselpage2}
-        src="https://media.istockphoto.com/id/522645617/photo/empty-glasses-in-restaurant.jpg?s=612x612&w=0&k=20&c=dYZAvj9xodJG11gyPZhPgFuDrXRgWBerQliKz4jguOg="
+        src={imgs[1]}
         alt='Second slide'
         style={{width:1080, height:720}}
         />
@@ -40,7 +46,7 @@ function CarouselPage() {
       <img 
         className='d-block w-100'
         // src={carouselpage3}
-        src="https://media.istockphoto.com/id/1497707608/photo/kitchen-cutlery-set-spoon-and-fork-set.jpg?s=612x612&w=0&k=20&c=M_38siTVgy8Xua9Omm25RMyezPP76lvqNY7KZvf1leQ="
+        src={imgs[2]}
         alt='Third slide'
         style={{width:1080, height:720}}
         />

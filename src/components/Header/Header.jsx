@@ -1,13 +1,11 @@
 import React from 'react';
-import NavBarHeader from '../Navbar/NavBarHeader';
-import Title from './Title';
+import NavigationBar from '../Navbar/NavigationBar';
 
 export default function Header() {
 
   return (
     <header className="shadow">
-      <Title/>    
-      <NavBarHeader/>
+      <NavigationBar />
     </header>
   );
 }
