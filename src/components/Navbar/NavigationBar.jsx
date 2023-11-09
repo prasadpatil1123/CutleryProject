@@ -17,6 +17,7 @@ import {
 } from 'mdb-react-ui-kit';
 import Logo from '../../assets/Logo.png';
 
+
 export default function NavigationBar() {
     const [showBasic, setShowBasic] = useState(false);
 
@@ -39,14 +40,14 @@ export default function NavigationBar() {
                 <MDBCollapse navbar show={showBasic}>
                     <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
                         <MDBNavbarItem>
-                            <MDBNavbarLink href='./../Home/Home.jsx'>
+                            <MDBNavbarLink onClick={'home'}>
                                 Home
                             </MDBNavbarLink>
                         </MDBNavbarItem>
 
                         <MDBNavbarItem>
-                            <MDBNavbarLink href='./../Login/Login.jsx'>
-                                login
+                            <MDBNavbarLink link href="http://localhost:5173/login">
+                                Login
                             </MDBNavbarLink>
                         </MDBNavbarItem>
 
@@ -65,12 +66,7 @@ export default function NavigationBar() {
                                         <MDBNavbarLink href='./../User/role/admin/AdminPanel.jsx'>
                                             Admin Panel
                                         </MDBNavbarLink>
-                                    </MDBDropdownItem>
-                                    <MDBDropdownItem >
-                                        <MDBNavbarLink href='./../User/role/seller/SellerPanel.jsx'>
-                                            Seller Panel
-                                        </MDBNavbarLink>
-                                    </MDBDropdownItem>
+                                    </MDBDropdownItem>                                    
                                     <MDBDropdownItem >
                                         <MDBNavbarLink href='./../User/role/customer/CustomerPanel.jsx'>
                                             Customer Panel

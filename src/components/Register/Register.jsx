@@ -56,7 +56,7 @@ const Register = () => {
         email: email,
         password: password,
         mobile_no: mobile,
-        userRole: ("CUSTOMER", "ADMIN","SELLER")
+        userRole: ("CUSTOMER", "ADMIN")
 
       });
       alert("Registration Successfully Done!!") //
@@ -139,12 +139,7 @@ const Register = () => {
                 ADMIN
               </label>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-              <label class="form-check-label" for="flexRadioDefault2">
-                SELLER
-              </label>
-            </div>
+            
 
           </div>
         </div>

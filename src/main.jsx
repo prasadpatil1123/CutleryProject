@@ -12,7 +12,6 @@ import ErrorPage from './components/404Page/ErrorPage'
 import Register from './components/Register/Register'
 import ForgotPassword from './components/ForgotPassword/ForgotPassword'
 import AdminPanel from './components/User/role/admin/AdminPanel.jsx'
-import SellerPanel from './components/User/role/seller/SellerPanel.jsx'
 import CustomerPanel from './components/User/role/customer/CustomerPanel.jsx'
 import Products from './components/Products/Products.jsx'
 import Cart from './components/Cart/Cart.jsx'
@@ -30,10 +29,7 @@ const router = createBrowserRouter(
       <Route path="/products" component={Products} />
       <Route path="/cart" component={Cart} />
 
-      {/* <Route path='' element={<ForgotPassword />} /> */}
-
       <Route path="/admin" component={AdminPanel} />
-      <Route path="/seller" component={SellerPanel} />
       <Route path="/customer" component={CustomerPanel} />
 
       <Route path='user/' element={<User />}>

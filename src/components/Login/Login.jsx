@@ -103,35 +103,7 @@ const Login = () => {
                 toast.success("Login Successful!");
                 // alert("Login Successfull!!");
                 
-            }
-            else if (res.data.userRole === "SELLER") {
-
-              setMessage("")
-
-              sessionStorage.setItem("isLoggedIn", "True");
-              console.log(res.data)
-
-              sessionStorage.setItem("userName", res.data.first_name);
-              console.log(res.data.first_name)
-
-              sessionStorage.setItem("userId", res.data.id);
-              console.log(res.data.id)
-
-              sessionStorage.setItem("userRole", res.data.userRole);
-              console.log(res.data.userRole)
-
-              const objectString = JSON.stringify(res.data);
-
-              sessionStorage.setItem("user", objectString);
-
-              console.log(res.data.userRole);
-
-              // setMessage("Login successfull!");
-              navigate("/sellerhome");
-              toast.success("Login Successful!");
-              // alert("Login Successfull!!");
-              
-          } else {
+            } else {
                 // alert("Login failed, Plz enter valid Credentials.");
                 setUser({ email: "", password: "" });
                 setMessage("Something went wrong");
