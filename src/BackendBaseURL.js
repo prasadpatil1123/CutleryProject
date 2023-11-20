@@ -1,1 +1,1 @@
- export const BackendBaseURL = "http://localhost:8080/"
+export const BackendBaseURL = "http://localhost:8080/rotarycutleryrental";

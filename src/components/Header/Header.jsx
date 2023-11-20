@@ -1,7 +1,14 @@
 // import React from 'react'
 import { Link, NavLink } from "react-router-dom";
-import SearchBar from "../SearchBar/SearchBar";
+// import SearchBar from "../SearchBar/SearchBar";
 import Logo from "../../assets/Logo.png";
+
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from "react-bootstrap";
 
 export default function Header() {
   return (
@@ -12,23 +19,49 @@ export default function Header() {
             <img src={Logo} className="mr-5 h-12" alt="Logo" />
           </Link>
 
-          <div className="flex items-center lg:order-2">
+          {/* <div className="flex items-center lg:order-2">
             <Link
               to="/login"
               className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
             >
               Log in
             </Link>
+          </div> */}
+
+          <div className="flex items-center lg:order-4 ">
+            <Dropdown>
+              <DropdownToggle
+                tag="b"
+                // className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                style={{ backgroundColor: "bg-green-700", color: "white" }}
+              >
+                {/* Profile */}
+                <span className="white-text">Profile</span>
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem>Profile</DropdownItem>
+                <DropdownItem>My Orders </DropdownItem>
+                <DropdownItem>My Reviews</DropdownItem>
+                <DropdownItem>
+                  <Link
+                    to="/login"
+                    className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                  >
+                    Login
+                  </Link>
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </div>
 
-          <div className="flex flex-wrap justify-between items-center">
+          {/* <div className="flex flex-wrap justify-between items-center">
             <Link
               to="/SearchBar"
               className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
             >
               <SearchBar />
             </Link>
-          </div>
+          </div> */}
 
           <div
             className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
@@ -47,14 +80,14 @@ export default function Header() {
                   Home
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <select>
                   <option>Home</option>
                   <option>About</option>
                   <option>Contact</option>
                   <option>Service</option>
                 </select>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/About"

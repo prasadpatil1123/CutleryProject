@@ -8,11 +8,14 @@ import {
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-import { BackendBaseURL } from '../../BackendBaseURL';
+// import { BackendBaseURL } from '../../BackendBaseURL';
 import { Link } from 'react-router-dom';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
+
+const hostname ="http://localhost:8080/rotarycutleryrental";
+
 
 const Login = () => {
 
@@ -20,8 +23,10 @@ const Login = () => {
     var [user, setUser] = useState({ email: "", password: "" });
     var [message, setMessage] = useState("");
     const navigate = useNavigate();
-
-
+    // const history = useHistory();
+    // function redirectToAnotherWebsite() {
+    //     window.location.href = 'https://www.google.com/';
+    // }
     var handleChange = (args) => {
         var changedUser = { ...user };
         changedUser[args.target.name] = args.target.value;
@@ -31,13 +36,16 @@ const Login = () => {
     // var Register = () => {
     //     navigate.push("/register");
     // }
+    // var Register=()=>{
+    //     history.push("/register")
+    // }
 
-
-        const notify = () => toast("Wow so easy!");
+        // const notify = () => toast("Wow so easy!");
 
     var signIn = async () => {
         console.log("Inside Login")
-        await axios.get(`${BackendBaseURL}/login`,{
+        // await axios.get(`${BackendBaseURL}/login`,{
+            await axios.get(`${hostname}/login`,{
             params: {
               email: user.email,
               password: user.password
@@ -50,15 +58,15 @@ const Login = () => {
             if (res.data.userRole === "CUSTOMER") {
 
                 setMessage("");
-
                 sessionStorage.setItem("isLoggedIn", "True");
-                console.log(res.data)
 
-                sessionStorage.setItem("userId", res.data.id);
-                console.log(res.data.id);
+                console.log(res.data)
 
                 sessionStorage.setItem("userName", res.data.first_name);
                 console.log(res.data.first_name);
+                sessionStorage.setItem("userId", res.data.id);
+                console.log(res.data.id);
+
 
                 sessionStorage.setItem("userRole", res.data.userRole);
                 console.log(res.data.userRole);
@@ -70,9 +78,9 @@ const Login = () => {
                 console.log(res.data.userRole);
 
                 setMessage("Login Succesfull!");
-                toast.success('Login Successful!');
-                navigate("/customerhome");
-                // alert("Login Successfull!!");
+                // toast.success('Login Successful!');
+                navigate("/home");
+                 alert("Login Successfull!!");
 
 
             }
@@ -98,17 +106,17 @@ const Login = () => {
 
                 console.log(res.data.userRole);
 
-                // setMessage("Login successfull!");
+                setMessage("Login successfull!");
                 navigate("/adminhome");
-                toast.success("Login Successful!");
-                // alert("Login Successfull!!");
+                // toast.success("Login Successful!");
+                 alert("Login Successfull!!");
                 
             } else {
-                // alert("Login failed, Plz enter valid Credentials.");
+                alert("Login failed, Plz enter valid Credentials.");
                 setUser({ email: "", password: "" });
                 setMessage("Something went wrong");
             }
-            // toast.success("Login Successful!");
+            //toast.success("Login Successful!");
 
         }).catch((e)=>{
             console.log(e);
