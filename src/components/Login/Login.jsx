@@ -79,7 +79,7 @@ const Login = () => {
 
                 setMessage("Login Succesfull!");
                 // toast.success('Login Successful!');
-                navigate("/home");
+                navigate("/customer");
                  alert("Login Successfull!!");
 
 

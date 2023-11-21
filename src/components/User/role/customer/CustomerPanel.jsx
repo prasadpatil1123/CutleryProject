@@ -1,10 +1,13 @@
 // CustomerPanel.js
-import React from 'react';
+import react from 'react';
+// import Homepage from './Homepage';
+
 
 const CustomerPanel = () => {
   return (
     <div>
-      <h2>Customer Panel</h2>
+      <h1>Homepage</h1>
+      {/* <Homepage /> */}
       {/* Add customer-specific features and functionalities */}
     </div>
   );

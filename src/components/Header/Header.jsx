@@ -9,8 +9,36 @@ import {
   DropdownMenu,
   DropdownToggle,
 } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
-export default function Header() {
+export default function Header(selectCat) {
+
+  const[category,setCategory]=useState([]);
+
+  useEffect(()=>{
+    const getCategory=async()=>{
+        const reqData=await fetch("http://localhost:8080/pizzadelivery/categories");
+        const resData=await reqData.json();
+        setCategory(resData);
+        console.log(reqData);
+    }
+    getCategory();
+  },[]);
+
+  const handleOptionChange = (event) => {
+
+    // debugger;
+    const selectedCategory = category.find(cat => cat === event.target.value);
+    console.log("selected cat id")
+    console.log(selectedCategory.id)
+   
+  }
+  
+  const updateCat = (id)=>{
+    console.log("selected cat id")
+    console.log(id)
+    selectCat(id)
+  }
   return (
     <header className="shadow sticky z-50 top-0">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -52,6 +80,51 @@ export default function Header() {
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
+          </div>
+
+          <div className="flex items-center lg:order-3 ">
+            <div className="dropdown" style={{ marginLeft: "10px" }}>
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select A Category
+              </button>
+              <ul className="dropdown-menu">
+                <li>
+                  <a
+                    key={0}
+                    value={0}
+                    // onClick={() => {
+                    //   updateCat(0);
+                    // }}
+                    className="dropdown-item"
+                    href="#"
+                  >
+                    All
+                  </a>
+                </li>
+                {/* {category.map((categ) => (
+                
+                  <li>
+                    <a
+                      key={categ.id}
+                      value={categ}
+                      onClick={() => {
+                        updateCat(categ.id);
+                      }}
+                      className="dropdown-item"
+                      href="#"
+                    >
+                      {categ.categoryName}
+                    </a>
+                  </li>
+                ))} */}
+              
+              </ul>
+            </div>
           </div>
 
           {/* <div className="flex flex-wrap justify-between items-center">

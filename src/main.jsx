@@ -31,11 +31,11 @@ const router = createBrowserRouter(
       <Route path="register" element={<Register />} />
       <Route path="forgotpassword" element={<ForgotPassword />} />
 
-      <Route path="/products" component={Products} />
-      <Route path="/cart" component={Cart} />
+      <Route path="/products" component={<Products/>} />
+      <Route path="/cart" component={<Cart/>} />
 
-      <Route path="/admin" component={AdminPanel} />
-      <Route path="/customer" component={CustomerPanel} />
+      <Route path="/admin" component={<AdminPanel/>} />
+      <Route path="/customer" component={<CustomerPanel/>} />
 
       <Route path="user/" element={<User />}>
         <Route path=":userid" element={<User />} />
