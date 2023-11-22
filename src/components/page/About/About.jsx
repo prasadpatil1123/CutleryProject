@@ -126,13 +126,13 @@ const AboutUs = () => {
 
       <h3>Get Started</h3>
       <p>
-        To get started with the Rotary Cutlery Distribution Management Application, please visit our website at <a href="https://rotarycutlery.org">https://rotarycutlery.org</a>.
+        To get started with the Rotary Cutlery Distribution Management Application, please visit our website at <a href="https://info@rslsolution.com">https://info@rslsolution.com</a>.
       </p>
 
-      <h3>Contact Us</h3>
+      {/* <h3>Contact Us</h3>
       <p>
-        If you have any questions, please feel free to contact us at <a href="mailto:info@rotarycutlery.org">info@rotarycutlery.org</a>.
-      </p>
+        If you have any questions, please feel free to contact us at <a href="mailto:info@rslsolution.com">info@rslsolution.com</a>.
+      </p> */}
     </div>
   );
 };

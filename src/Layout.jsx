@@ -10,9 +10,9 @@ function Layout() {
   return (
     <>
     <ToastContainer />
-    <Header/>   
+    {/* <Header/>   
     <Outlet />
-    <Footer />
+    <Footer /> */}
     </>
   )
 }

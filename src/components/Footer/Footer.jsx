@@ -37,11 +37,10 @@ export default function Footer() {
             <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
                 <MDBIcon icon="gem" className="me-3" />
-                Company name
+                ROTARY CUTLERY BANK
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
+              You may not have heard of RSL yet, but there is a very strong chance you have heard all about our clients. Our custom coded Mobile solutions include everything from complete platform systems to modular feature upgrades and solution consulting for the business. We don't sell applications, we create applications that customers need.
               </p>
             </MDBCol>
 
@@ -49,22 +48,27 @@ export default function Footer() {
               <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
               <p>
                 <a href='#!' className='text-reset'>
-                  Angular
+                  Dinner Set
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  React
+                Cutlery Holder
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Vue
+                Fork, spoon & knife
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Laravel
+                  Glass Set
+                </a>
+              </p>
+              <p>
+                <a href='#!' className='text-reset'>
+                Platters Set
                 </a>
               </p>
             </MDBCol>
@@ -97,18 +101,16 @@ export default function Footer() {
               <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
-                New York, NY 10012, US
+                80/1, Chinchwad, Pune, India 411033
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                info@example.com
+                info@rslsolution.com
               </p>
               <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
+                <MDBIcon icon="phone" className="me-3" />  +91 994 104 1415
               </p>
-              <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
-              </p>
+              
             </MDBCol>
           </MDBRow>
         </MDBContainer>
@@ -116,8 +118,8 @@ export default function Footer() {
 
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2021 Copyright:
-        <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+        <a className='text-reset fw-bold' href='https://info@rslsolution.com'>
+        info@rslsolution.com
         </a>
       </div>
     </MDBFooter>

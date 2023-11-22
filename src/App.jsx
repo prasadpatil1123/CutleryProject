@@ -1,12 +1,52 @@
-import React from 'react'
+import { Route, Routes } from "react-router-dom";
+import ProtectedRouteComponent from "./components/Login/ProtectedRouteComponent.jsx";
+
+import Home from "./components/Home/Home.jsx";
+import AboutUs from "./components/page/About/About.jsx";
+import ContactUs from "./components/Contact/Contact.jsx";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
+import ErrorPage from "./components/page/404Page/ErrorPage.jsx";
+
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/boxicons/css/boxicons.min.css";
+
+import AdminPanel from "./components/User/role/admin/AdminPanel.jsx";
+import TrendingProduct from "./components/Trending/TrendingProduct.jsx";
+
 function App() {
   return (
-    <>
-      <div>
-        <h1 className='bg-green-300'>React router dom</h1>
-      </div>
-    </>
-  )
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="home" exact element={<Home />} />
+        {/* <Route path="" element={<Home />} /> */}
+        <Route path="about" element={<AboutUs />} />
+        <Route path="contact" element={<ContactUs />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="Trending" element={<TrendingProduct />} />
+        <Route path="forgotpassword" element={<ForgotPassword />} />
+        <Route path="*" element={<ErrorPage />} />
+        {/* </Route> */}
+        {/* <ProtectedRouteComponent path="/admin" element={<AdminPanel />} /> */}
+        {/* <ProtectedRouteComponent
+            path="/customer"
+            element={<CustomerPanel />}
+          /> */}
+        {/* <ProtectedRouteComponent path="/cart" element={<Cart />} /> */}
+        {/* <ProtectedRouteComponent
+            path="/user"
+            exact
+            element={<UserList />}
+          /> */}
+      </Routes>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;

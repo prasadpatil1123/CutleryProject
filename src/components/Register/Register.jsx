@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BackendBaseURL } from "../../BackendBaseURL";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,6 +13,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [mobile, setMobile] = useState("");
   const [userRole, setUserRole] = useState("");
+  const navigate = useNavigate();
 
   const save = async (event) => {
     event.preventDefault(); //to avoid default url pattern
@@ -38,6 +39,7 @@ const Register = () => {
       setPassword("");
       setMobile("");
       setUserRole("");
+      navigate("/login");
     } catch (err) {
       console.log("Error: " + err);
       alert("Registration Failed");
@@ -173,7 +175,6 @@ const Register = () => {
             </label>
 
             <div className="relative mt-2">
-             
               <input
                 type="tel"
                 name="number"
