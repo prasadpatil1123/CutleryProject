@@ -14,17 +14,17 @@
 */
 const callouts = [
     {
-      name: 'Desk and Office',
-      description: 'Work from home accessories',
-      imageSrc: 'https://images.unsplash.com/photo-1607637508318-d22cfb4299d4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      name: 'Dinner Knife',
+      description: 'Dish with Knife',
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0486/7712/6297/files/Screenshot-2023-08-22-151655_1_480x480.webp?v=1692697803',
       imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
       href: '#',
     },
     {
-      name: 'Self-Improvement',
-      description: 'Journals and note-taking',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
-      imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
+      name: 'Soup Spoon',
+      description: 'Person using a pen to cross a task off a productivity paper card.',
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0486/7712/6297/files/Screenshot-2023-08-22-160158_1_480x480.webp?v=1692700484',
+      imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
       href: '#',
     },
     {

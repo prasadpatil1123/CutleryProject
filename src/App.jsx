@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import ProtectedRouteComponent from "./components/Login/ProtectedRouteComponent.jsx";
+// import ProtectedRouteComponent from "./components/Login/ProtectedRouteComponent.jsx";
 
 import Home from "./components/Home/Home.jsx";
 import AboutUs from "./components/page/About/About.jsx";
@@ -13,14 +13,16 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/boxicons/css/boxicons.min.css";
+// import Navbar from "./components/Navbar/";
 
-import AdminPanel from "./components/User/role/admin/AdminPanel.jsx";
+// import AdminPanel from "./components/User/role/admin/AdminPanel.jsx";
 import TrendingProduct from "./components/Trending/TrendingProduct.jsx";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="home" exact element={<Home />} />
         {/* <Route path="" element={<Home />} /> */}
