@@ -196,7 +196,7 @@ export default function Header(selectCat) {
               </li> */}
               <li>
                 <NavLink
-                  to="/Service"
+                  to="/steps"
                   className={({ isActive }) =>
                     `block pu-2 pr-4 pl-3 duration-200 border-b border-gray-100
                    ${
@@ -204,7 +204,7 @@ export default function Header(selectCat) {
                    } lg:hover:bg-transparent lg:border-0 hover:text:text-green-700 lg:p-0`
                   }
                 >
-                  Service
+                  Steps to follow 
                 </NavLink>
               </li>
 

@@ -17,6 +17,7 @@ import "../node_modules/boxicons/css/boxicons.min.css";
 
 // import AdminPanel from "./components/User/role/admin/AdminPanel.jsx";
 import TrendingProduct from "./components/Trending/TrendingProduct.jsx";
+import Steps from "./components/page/Steps/Steps.jsx";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="home" exact element={<Home />} />
         {/* <Route path="" element={<Home />} /> */}
         <Route path="about" element={<AboutUs />} />
+        <Route path="steps" element={<Steps/>} />
         <Route path="contact" element={<ContactUs />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />

@@ -3,6 +3,7 @@ import Carouselpage from "./CarouselPage/CarouselPage";
 import PromoSections from "./PromoSections/PromoSections";
 import ServiceSection from "./ServiceSection/ServiceSection";
 import About from "../page/About/About";
+import Steps from "../page/Steps/Steps";
 // import Contact from "../Contact/Contact";
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
       <ServiceSection />
       <PromoSections />
       <About />
+      <Steps/>
       {/* <Contact /> */}
     </div>
   );
