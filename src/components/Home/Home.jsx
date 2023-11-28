@@ -4,12 +4,18 @@ import PromoSections from "./PromoSections/PromoSections";
 import ServiceSection from "./ServiceSection/ServiceSection";
 import About from "../page/About/About";
 import Steps from "../page/Steps/Steps";
+import Filter from "../filter/Filter";
+import ProductCard from "../productCard/ProductCard";
+// import CarouselOffer from "./CarouselPage/CarouselOffer";
 // import Contact from "../Contact/Contact";
 
 function Home() {
   return (
     <div className="mx-auto w-full max-w-7xl">
+      {/* <CarouselOffer/> */}
       <Carouselpage />
+      <Filter/>
+      <ProductCard/>
       <ServiceSection />
       <PromoSections />
       <About />

@@ -25,7 +25,7 @@ function App() {
       <Header />
       {/* <Navbar /> */}
       <Routes>
-        <Route path="home" exact element={<Home />} />
+        <Route path="/" exact element={<Home />} />
         {/* <Route path="" element={<Home />} /> */}
         <Route path="about" element={<AboutUs />} />
         <Route path="steps" element={<Steps/>} />
