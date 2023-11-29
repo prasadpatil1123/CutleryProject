@@ -6,6 +6,8 @@ import About from "../page/About/About";
 import Steps from "../page/Steps/Steps";
 import Filter from "../filter/Filter";
 import ProductCard from "../productCard/ProductCard";
+import Track from "../track/Track";
+// import Testimonial from "../testimonial/Testimonial";
 // import CarouselOffer from "./CarouselPage/CarouselOffer";
 // import Contact from "../Contact/Contact";
 
@@ -16,6 +18,8 @@ function Home() {
       <Carouselpage />
       <Filter/>
       <ProductCard/>
+      <Track/>
+      {/* <Testimonial/> */}
       <ServiceSection />
       <PromoSections />
       <About />
