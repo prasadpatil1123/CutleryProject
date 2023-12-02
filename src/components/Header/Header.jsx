@@ -149,7 +149,7 @@ export default function Header(selectCat) {
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
                 <NavLink
-                to="/Home"
+                to="/home"
                   className={({ isActive }) =>
                     `block pu-2 pr-4 pl-3 duration-200 border-b border-gray-100
                   ${
@@ -170,7 +170,7 @@ export default function Header(selectCat) {
               </li> */}
               <li>
                 <NavLink
-                  to="/About"
+                  to="/about"
                   className={({ isActive }) =>
                     `block pu-2 pr-4 pl-3 duration-200 border-b border-gray-100
                    ${
@@ -210,7 +210,7 @@ export default function Header(selectCat) {
 
               <li>
                 <NavLink
-                  to="/Book_Cutlery"
+                  to="/productCard"
                   className={({ isActive }) =>
                     `block pu-2 pr-4 pl-3 duration-200 border-b border-gray-100
                    ${
@@ -224,7 +224,7 @@ export default function Header(selectCat) {
 
               <li>
                 <NavLink
-                  to="/Trending"
+                  to="/trending"
                   className={({ isActive }) =>
                     `block pu-2 pr-4 pl-3 duration-200 border-b border-gray-100
                    ${

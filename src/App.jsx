@@ -18,6 +18,8 @@ import "../node_modules/boxicons/css/boxicons.min.css";
 // import AdminPanel from "./components/User/role/admin/AdminPanel.jsx";
 import TrendingProduct from "./components/Trending/TrendingProduct.jsx";
 import Steps from "./components/page/Steps/Steps.jsx";
+import ProductInfo from "./components/productInfo/ProductInfo.jsx";
+import ProductCard from "./components/productCard/ProductCard.jsx";
 
 function App() {
   return (
@@ -26,13 +28,15 @@ function App() {
       {/* <Navbar /> */}
       <Routes>
         <Route path="/" exact element={<Home />} />
-        {/* <Route path="" element={<Home />} /> */}
+        <Route path="home" element={<Home />} />
         <Route path="about" element={<AboutUs />} />
         <Route path="steps" element={<Steps/>} />
         <Route path="contact" element={<ContactUs />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="Trending" element={<TrendingProduct />} />
+        <Route path="productCard" element={<ProductCard />} />
+        <Route path="productinfo/:id" element={<ProductInfo />} />
+        <Route path="trending" element={<TrendingProduct />} />
         <Route path="forgotpassword" element={<ForgotPassword />} />
         <Route path="*" element={<ErrorPage />} />
         {/* </Route> */}
