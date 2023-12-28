@@ -115,7 +115,7 @@ export default function Header(selectCat) {
           </div>
 
           <div className="flex items-center lg:order-3 ">
-            <div className="dropdown" style={{ marginLeft: "10px" }}>
+            {/* <div className="dropdown" style={{ marginLeft: "10px" }}>
               <button
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
@@ -139,7 +139,7 @@ export default function Header(selectCat) {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
 
           <div
@@ -233,6 +233,32 @@ export default function Header(selectCat) {
                   }
                 >
                   Trending
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/feedback"
+                  className={({ isActive }) =>
+                    `block pu-2 pr-4 pl-3 duration-200 border-b border-gray-100
+                   ${
+                     isActive ? "text-green-700" : "text-gray-700"
+                   } lg:hover:bg-transparent lg:border-0 hover:text:text-green-700 lg:p-0`
+                  }
+                >
+                  Feedback
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/addbranch"
+                  className={({ isActive }) =>
+                    `block pu-2 pr-4 pl-3 duration-200 border-b border-gray-100
+                   ${
+                     isActive ? "text-green-700" : "text-gray-700"
+                   } lg:hover:bg-transparent lg:border-0 hover:text:text-green-700 lg:p-0`
+                  }
+                >
+                  Add Branch Form
                 </NavLink>
               </li>
             </ul>

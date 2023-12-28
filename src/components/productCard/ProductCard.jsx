@@ -3,7 +3,7 @@
 
 function ProductCard() {
 //   const context = useContext(myContext);
-//   const { mode } = context;
+//   const { mode, product } = context;
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-8 md:py-16 mx-auto">
@@ -580,8 +580,9 @@ function ProductCard() {
               </div>
             </div>
           </div>
-
         </div>
+
+
       </div>
     </section>
   );

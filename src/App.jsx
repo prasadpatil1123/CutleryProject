@@ -13,25 +13,27 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/boxicons/css/boxicons.min.css";
-// import Navbar from "./components/Navbar/";
-
-// import AdminPanel from "./components/User/role/admin/AdminPanel.jsx";
 import TrendingProduct from "./components/Trending/TrendingProduct.jsx";
 import Steps from "./components/page/Steps/Steps.jsx";
 import ProductInfo from "./components/productInfo/ProductInfo.jsx";
 import ProductCard from "./components/productCard/ProductCard.jsx";
+import Feedback from "./components/Feedback/feedback.jsx";
+import AddBranchForm from "./components/AddBranchForm/AddBranchForm.jsx";
+
 
 function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Navbar /> */}
+      
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="about" element={<AboutUs />} />
         <Route path="steps" element={<Steps/>} />
         <Route path="contact" element={<ContactUs />} />
+        <Route path="feedback" element={<Feedback />} />
+        <Route path="addbranch" element={<AddBranchForm />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="productCard" element={<ProductCard />} />
@@ -39,18 +41,6 @@ function App() {
         <Route path="trending" element={<TrendingProduct />} />
         <Route path="forgotpassword" element={<ForgotPassword />} />
         <Route path="*" element={<ErrorPage />} />
-        {/* </Route> */}
-        {/* <ProtectedRouteComponent path="/admin" element={<AdminPanel />} /> */}
-        {/* <ProtectedRouteComponent
-            path="/customer"
-            element={<CustomerPanel />}
-          /> */}
-        {/* <ProtectedRouteComponent path="/cart" element={<Cart />} /> */}
-        {/* <ProtectedRouteComponent
-            path="/user"
-            exact
-            element={<UserList />}
-          /> */}
       </Routes>
       <Footer />
     </div>
