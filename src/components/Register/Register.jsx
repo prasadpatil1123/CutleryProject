@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { BackendBaseURL } from "../../BackendBaseURL";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
@@ -15,20 +14,31 @@ const Register = () => {
   const [userRole, setUserRole] = useState("");
   const navigate = useNavigate();
 
+  const hostname ="http://localhost:8080/rotarycutleryrental";
+
   const save = async (event) => {
     event.preventDefault(); //to avoid default url pattern
     try {
       // const result = await axios.get("http://localhost:8080/rotarycutleryrental")
-
-      await axios.post(`${BackendBaseURL}/register`, {
+      console.log("Request Payload:", {
+        first_name: firstname,
+        last_name: lastname,
+        email: email,
+        password: password,
+        mobile_no: mobile,
+        userRole: ["CUSTOMER", "ADMIN"],
+      });
+      
+      const response = await axios.post(`${hostname}/register`, {
         //assign frontend user data to backend with backend variables
         first_name: firstname,
         last_name: lastname,
         email: email,
         password: password,
         mobile_no: mobile,
-        userRole: ("CUSTOMER", "ADMIN"),
+        userRole: customer,
       });
+      console.log(response.data);
       alert("Registration Successfully Done!!"); //
 
       //set(change value) => if any value will change then it will be set through set() method
@@ -191,7 +201,7 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="mt-4">
+        {/* <div className="mt-4">
           <label className="block text-sm font-semibold leading-6 text-gray-900">
             User Role
           </label>
@@ -225,12 +235,12 @@ const Register = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="mt-10">
           <button
             type="submit"
-            onClick={save}
+            onSubmit={save}
             className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Sign Up
